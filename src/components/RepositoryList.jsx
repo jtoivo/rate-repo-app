@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 import RepositoryItem from './RepositoryItem';
 
 const styles = StyleSheet.create({
@@ -59,7 +60,7 @@ const ItemSeparator = () => <View style={styles.separator} />;
 
 const RepositoryList = () => {
   return (
-    <View>
+    <View style={{ flex: 1 }}>
       <FlatList
         data={repositories}
         ItemSeparatorComponent={ItemSeparator}

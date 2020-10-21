@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet, View, Image } from 'react-native';
+import Text from './Text';
 import theme from '../theme';
 
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    backgroundColor: 'white'
+    backgroundColor: 'white',
   },
   body: {
     display: 'flex',
@@ -23,9 +24,6 @@ const styles = StyleSheet.create({
   },
   statsItem: {
     alignItems: 'center'
-  },
-  statsValue: {
-    fontWeight: theme.fontWeights.bold
   },
   avatarImg: {
     width: 50,
@@ -68,19 +66,19 @@ const RepositoryItem = ({ item }) => {
       </View>
       <View style={styles.stats}>
         <View style={styles.statsItem}>
-          <Text style={styles.statsValue} >{round(item.stargazersCount)}</Text>
+          <Text fontWeight="bold">{round(item.stargazersCount)}</Text>
           <Text>Stars</Text>
         </View>
         <View style={styles.statsItem}>
-          <Text style={styles.statsValue}>{round(item.forksCount)}</Text>
+          <Text fontWeight="bold">{round(item.forksCount)}</Text>
           <Text>Forks</Text>
         </View>
         <View style={styles.statsItem}>
-          <Text style={styles.statsValue}>{round(item.reviewCount)}</Text>
+          <Text fontWeight="bold">{round(item.reviewCount)}</Text>
           <Text>Reviews</Text>
         </View>
         <View style={styles.statsItem}>
-          <Text style={styles.statsValue}>{round(item.ratingAverage)}</Text>
+          <Text fontWeight="bold">{round(item.ratingAverage)}</Text>
           <Text>rating</Text>
         </View>
       </View>

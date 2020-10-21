@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback } from 'react-native';
+import { Link } from 'react-router-native';
 import theme from '../theme';
-import Text from './Text';
 
 const styles = StyleSheet.create({
   text: {
@@ -11,11 +11,11 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppBarTab = ({ text }) => {
+const AppBarTab = ({ text, to }) => {
   return (
-    <TouchableWithoutFeedback>
+    <Link to={to} component={TouchableOpacity} activeOpacity={0.8}>
       <Text style={styles.text}>{text}</Text>
-    </TouchableWithoutFeedback>
+    </Link>
   );
 };
 
