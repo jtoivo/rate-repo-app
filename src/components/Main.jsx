@@ -9,7 +9,7 @@ const Main = () => {
   const styles = StyleSheet.create({
     container: {
       backgroundColor: '#e1e4e8',
-      flex: 1
+      flex: 1,
     }
   });
   return (

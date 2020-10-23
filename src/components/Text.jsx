@@ -22,6 +22,9 @@ const styles = StyleSheet.create({
   fontWeightBold: {
     fontWeight: theme.fontWeights.bold,
   },
+  defaultFontFamily: {
+    fontFamily: theme.fonts.main,
+  }
 });
 
 const Text = ({ color, fontSize, fontWeight, style, ...props }) => {
