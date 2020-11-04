@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
 const initialValues = { username: '', password: '' };
 
 const validationSchema = yup.object().shape({
-  username: yup.string().required('Username in required'),
+  username: yup.string().required('Username is required'),
   password: yup.string().required('Password is required')
 });
 
