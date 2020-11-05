@@ -4,6 +4,8 @@ import { View, StyleSheet, Text, TouchableWithoutFeedback } from 'react-native';
 import FormikTextInput from './FormikTextInput';
 import theme from '../theme';
 import * as yup from 'yup';
+import useSignIn from '../hooks/useSignIn';
+import { useHistory } from 'react-router-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -41,8 +43,18 @@ const SignInForm = ({ onSubmit }) => {
 };
 
 const SignIn = () => {
-  const onSubmit = creds => {
-    console.log(creds.username, creds.password);
+  const [signIn] = useSignIn();
+  const history = useHistory();
+
+  const onSubmit = async (creds) => {
+    const { username, password } = creds;
+    try {
+      await signIn({ username, password });
+      history.push('/');
+    }
+    catch (e) {
+      console.log(e);
+    }
   };
 
   return (

@@ -11,9 +11,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const AppBarTab = ({ text, to }) => {
+const AppBarTab = ({ text, to, onPress }) => {
   return (
-    <Link to={to} component={TouchableOpacity} activeOpacity={0.8}>
+    <Link onPress={onPress} to={to} component={TouchableOpacity} activeOpacity={0.8}>
       <Text style={styles.text}>{text}</Text>
     </Link>
   );
